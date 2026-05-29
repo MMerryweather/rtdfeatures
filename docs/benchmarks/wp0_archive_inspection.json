@@ -1,0 +1,553 @@
+{
+  "archive_path": "test_data/nRTD-v1.0.0.zip",
+  "array_summaries": [
+    {
+      "case": "adler",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/E_expected.npy",
+      "start_time": null
+    },
+    {
+      "case": "adler",
+      "dtype": "float32",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": -1.7725526504364097e-06,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/E_predicted.npy",
+      "start_time": null
+    },
+    {
+      "case": "adler",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        285
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/concentration.npy",
+      "start_time": null
+    },
+    {
+      "case": "adler",
+      "dtype": "float64",
+      "end_time": 35.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 35.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/t_E_expected.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "adler",
+      "dtype": "float32",
+      "end_time": 35.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": false,
+      "max_value": 35.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/t_E_predicted.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "adler",
+      "dtype": "float64",
+      "end_time": 99.89949748743719,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 99.89949748743719,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        285
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/time.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "cholette",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 0.12482685789012364,
+      "min_value": 2.0216917863330623e-07,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/E_expected.npy",
+      "start_time": null
+    },
+    {
+      "case": "cholette",
+      "dtype": "float32",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": 1.874847157523618e-06,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/E_predicted.npy",
+      "start_time": null
+    },
+    {
+      "case": "cholette",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 0.9999999999688318,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/concentration.npy",
+      "start_time": null
+    },
+    {
+      "case": "cholette",
+      "dtype": "float64",
+      "end_time": 50.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 50.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        201
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/t_E_expected.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "cholette",
+      "dtype": "float32",
+      "end_time": 25.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 25.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/t_E_predicted.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "cholette",
+      "dtype": "float64",
+      "end_time": 49.99999999999999,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 49.99999999999999,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/time.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/E_expected.npy",
+      "start_time": null
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float32",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": -1.996564833461889e-06,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/E_predicted.npy",
+      "start_time": null
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 0.9998977292284933,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/concentration.npy",
+      "start_time": null
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float64",
+      "end_time": 70.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 70.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/t_E_expected.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float32",
+      "end_time": 70.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": false,
+      "max_value": 70.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/t_E_predicted.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "dispersion",
+      "dtype": "float64",
+      "end_time": 140.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 140.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/time.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/E_expected.npy",
+      "start_time": null
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float32",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 1.0,
+      "min_value": -0.0011648187646642327,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/E_predicted.npy",
+      "start_time": null
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float32",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 0.9994364976882935,
+      "min_value": -0.0002272612473461777,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        1,
+        1,
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/c_conv_in.npy",
+      "start_time": null
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float64",
+      "end_time": null,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": null,
+      "max_value": 0.9999441870608479,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/concentration.npy",
+      "start_time": null
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float64",
+      "end_time": 50.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 50.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/t_E_expected.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float32",
+      "end_time": 50.0,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 50.0,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        101
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/t_E_predicted.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "laminar_flow",
+      "dtype": "float64",
+      "end_time": 99.99999999999999,
+      "file_type": ".npy",
+      "fixture_kind": "analytical_reference",
+      "grid_is_regular": true,
+      "max_value": 99.99999999999999,
+      "min_value": 0.0,
+      "npz_keys": null,
+      "npz_members": null,
+      "shape": [
+        200
+      ],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/time.npy",
+      "start_time": 0.0
+    },
+    {
+      "case": "MGA-E-05032025_250ml-min_Analytik_MS_E_nRTD.npz",
+      "dtype": "npz",
+      "end_time": null,
+      "file_type": ".npz",
+      "fixture_kind": "learned_experimental_reference",
+      "grid_is_regular": null,
+      "max_value": null,
+      "min_value": null,
+      "npz_keys": [
+        "E",
+        "t"
+      ],
+      "npz_members": [
+        {
+          "dtype": "float64",
+          "key": "E",
+          "max_value": 0.7147640554196512,
+          "min_value": 9.485043132158731e-05,
+          "shape": [
+            101
+          ]
+        },
+        {
+          "dtype": "float64",
+          "key": "t",
+          "max_value": 25.0,
+          "min_value": 0.0,
+          "shape": [
+            101
+          ]
+        }
+      ],
+      "shape": [],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_250ml-min_Analytik_MS_E_nRTD.npz",
+      "start_time": null
+    },
+    {
+      "case": "MGA-E-05032025_300ml-min_Analytik_MS_E_nRTD.npz",
+      "dtype": "npz",
+      "end_time": null,
+      "file_type": ".npz",
+      "fixture_kind": "learned_experimental_reference",
+      "grid_is_regular": null,
+      "max_value": null,
+      "min_value": null,
+      "npz_keys": [
+        "E",
+        "t"
+      ],
+      "npz_members": [
+        {
+          "dtype": "float64",
+          "key": "E",
+          "max_value": 0.770399411524192,
+          "min_value": 3.3507153006307467e-08,
+          "shape": [
+            101
+          ]
+        },
+        {
+          "dtype": "float64",
+          "key": "t",
+          "max_value": 25.0,
+          "min_value": 0.0,
+          "shape": [
+            101
+          ]
+        }
+      ],
+      "shape": [],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_300ml-min_Analytik_MS_E_nRTD.npz",
+      "start_time": null
+    },
+    {
+      "case": "MGA-E-05032025_75ml-min_Analytik_MS_E_nRTD.npz",
+      "dtype": "npz",
+      "end_time": null,
+      "file_type": ".npz",
+      "fixture_kind": "learned_experimental_reference",
+      "grid_is_regular": null,
+      "max_value": null,
+      "min_value": null,
+      "npz_keys": [
+        "E",
+        "t"
+      ],
+      "npz_members": [
+        {
+          "dtype": "float64",
+          "key": "E",
+          "max_value": 0.4647469543333484,
+          "min_value": 6.179723471350599e-05,
+          "shape": [
+            101
+          ]
+        },
+        {
+          "dtype": "float64",
+          "key": "t",
+          "max_value": 25.0,
+          "min_value": 0.0,
+          "shape": [
+            101
+          ]
+        }
+      ],
+      "shape": [],
+      "source_archive_path": "ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_75ml-min_Analytik_MS_E_nRTD.npz",
+      "start_time": null
+    }
+  ],
+  "known_hsa000_cases": [
+    "adler",
+    "cholette",
+    "dispersion",
+    "laminar_flow"
+  ],
+  "license": "MIT",
+  "source_archive": "ChemRxnEngLab/nRTD-v1.0.0.zip",
+  "zenodo_doi": "10.5281/zenodo.15609214",
+  "zenodo_record_url": "https://zenodo.org/records/15609214"
+}

@@ -1,0 +1,182 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install package with dev dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev,examples]"
+
+      - name: Run coverage gate
+        run: |
+          pytest -m "not external_data" \
+            --cov=src/rtdfeatures \
+            --cov-report=term-missing \
+            --cov-report=xml \
+            --cov-fail-under=88
+
+      - name: Run pip-audit
+        run: |
+          python -m pip install pip-audit
+          pip-audit
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,examples]"
+
+      - name: Lint with ruff
+        run: ruff check .
+
+      - name: Type-check with mypy
+        run: mypy src tests
+
+      - name: Test with pytest
+        run: pytest -m "not external_data" -v
+
+      - name: Test sklearn adapter
+        run: |
+          pip install -e ".[sklearn]"
+          pytest tests/test_sklearn_adapter.py -v
+          python examples/08_sklearn_adapter.py
+
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
+
+      - name: Check package with twine
+        run: twine check dist/*
+
+      - name: Run quickstart example (if exists)
+        run: |
+          if [ -f examples/01_quickstart_simplex.py ]; then
+            python examples/01_quickstart_simplex.py
+          fi
+
+      - name: Run parametric vs empirical example (if exists)
+        run: |
+          if [ -f examples/02_parametric_vs_empirical.py ]; then
+            python examples/02_parametric_vs_empirical.py
+          fi
+
+      - name: Run categorical genealogy example (if exists)
+        run: |
+          if [ -f examples/03_categorical_genealogy.py ]; then
+            python examples/03_categorical_genealogy.py
+          fi
+
+      - name: Run performance smoke benchmark
+        run: |
+          if [ -f benchmarks/smoke_transform_performance.py ]; then
+            python benchmarks/smoke_transform_performance.py
+          fi
+
+  build_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Build distribution artifacts
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+          python -m build
+          twine check dist/*
+
+      - name: Upload distribution artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-dist
+          path: dist/*
+
+  validate_wheel:
+    runs-on: ubuntu-latest
+    needs: build_artifacts
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Download distribution artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist
+
+      - name: Validate wheel in clean environment
+        run: |
+          python -m venv .venv-wheel
+          . .venv-wheel/bin/activate
+          python -m pip install --upgrade pip
+          pip install dist/*.whl
+          VALIDATION_TMPDIR="$(mktemp -d)"
+          cd "${VALIDATION_TMPDIR}"
+          python -c "import importlib.metadata, pathlib, rtdfeatures; module_path = pathlib.Path(rtdfeatures.__file__).resolve(); assert 'site-packages' in module_path.parts, f'Expected installed package in site-packages, got: {module_path}'; assert importlib.metadata.version('rtdfeatures') == rtdfeatures.__version__, 'Version mismatch between metadata and package'; print(rtdfeatures.__version__); print(module_path)"
+
+  validate_sdist:
+    runs-on: ubuntu-latest
+    needs: build_artifacts
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Download distribution artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: python-dist
+          path: dist
+
+      - name: Validate sdist in clean environment
+        run: |
+          python -m venv .venv-sdist
+          . .venv-sdist/bin/activate
+          python -m pip install --upgrade pip
+          pip install dist/*.tar.gz
+          VALIDATION_TMPDIR="$(mktemp -d)"
+          cd "${VALIDATION_TMPDIR}"
+          python -c "import importlib.metadata, pathlib, rtdfeatures; module_path = pathlib.Path(rtdfeatures.__file__).resolve(); assert 'site-packages' in module_path.parts, f'Expected installed package in site-packages, got: {module_path}'; assert importlib.metadata.version('rtdfeatures') == rtdfeatures.__version__, 'Version mismatch between metadata and package'; print(rtdfeatures.__version__); print(module_path)"

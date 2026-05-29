@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: rtdfeatures
+message: "If you use rtdfeatures in published work, please cite this repository."
+type: software
+authors:
+  - name: rtdfeatures maintainers
+license: MIT
+repository-code: "https://github.com/<org-or-user>/rtdfeatures"
+version: 1.0.0

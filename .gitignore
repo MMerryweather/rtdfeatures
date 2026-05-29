@@ -1,0 +1,26 @@
+.venv/*
+__pycache__/*
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.DS_Store
+.idea/
+.vscode/
+*.ipynb_checkpoints
+*.env
+.env.*
+*.bak
+*.tmp
+*.egg-info/
+dist/
+
+# on-core runtime files
+.agents/
+.artifacts/
+.codex/
+
+# Packaging artifacts
+.venv-artifact-sdist/
+.venv-artifact-wheel/

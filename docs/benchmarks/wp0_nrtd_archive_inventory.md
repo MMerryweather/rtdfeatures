@@ -1,0 +1,30 @@
+| fixture_kind | case | source_archive_path | shape | dtype | time_range | value_range | regular_grid |
+|---|---|---|---|---|---|---|---|
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/E_expected.npy | [101] | float64 | n/a | 0.0..1.0 | n/a |
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/E_predicted.npy | [101] | float32 | n/a | -1.7725526504364097e-06..1.0 | n/a |
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/concentration.npy | [285] | float64 | n/a | 0.0..1.0 | n/a |
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/t_E_expected.npy | [101] | float64 | 0.0..35.0 | 0.0..35.0 | True |
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/t_E_predicted.npy | [101] | float32 | 0.0..35.0 | 0.0..35.0 | False |
+| analytical_reference | adler | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/adler/time.npy | [285] | float64 | 0.0..99.89949748743719 | 0.0..99.89949748743719 | True |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/E_expected.npy | [101] | float64 | n/a | 2.0216917863330623e-07..0.12482685789012364 | n/a |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/E_predicted.npy | [101] | float32 | n/a | 1.874847157523618e-06..1.0 | n/a |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/concentration.npy | [200] | float64 | n/a | 0.0..0.9999999999688318 | n/a |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/t_E_expected.npy | [201] | float64 | 0.0..50.0 | 0.0..50.0 | True |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/t_E_predicted.npy | [101] | float32 | 0.0..25.0 | 0.0..25.0 | True |
+| analytical_reference | cholette | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/cholette/time.npy | [200] | float64 | 0.0..49.99999999999999 | 0.0..49.99999999999999 | True |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/E_expected.npy | [101] | float64 | n/a | 0.0..1.0 | n/a |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/E_predicted.npy | [101] | float32 | n/a | -1.996564833461889e-06..1.0 | n/a |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/concentration.npy | [200] | float64 | n/a | 0.0..0.9998977292284933 | n/a |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/t_E_expected.npy | [101] | float64 | 0.0..70.0 | 0.0..70.0 | True |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/t_E_predicted.npy | [101] | float32 | 0.0..70.0 | 0.0..70.0 | False |
+| analytical_reference | dispersion | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/dispersion/time.npy | [200] | float64 | 0.0..140.0 | 0.0..140.0 | True |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/E_expected.npy | [101] | float64 | n/a | 0.0..1.0 | n/a |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/E_predicted.npy | [101] | float32 | n/a | -0.0011648187646642327..1.0 | n/a |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/c_conv_in.npy | [1, 1, 200] | float32 | n/a | -0.0002272612473461777..0.9994364976882935 | n/a |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/concentration.npy | [200] | float64 | n/a | 0.0..0.9999441870608479 | n/a |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/t_E_expected.npy | [101] | float64 | 0.0..50.0 | 0.0..50.0 | True |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/t_E_predicted.npy | [101] | float32 | 0.0..50.0 | 0.0..50.0 | True |
+| analytical_reference | laminar_flow | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_000/data/laminar_flow/time.npy | [200] | float64 | 0.0..99.99999999999999 | 0.0..99.99999999999999 | True |
+| learned_experimental_reference | MGA-E-05032025_250ml-min_Analytik_MS_E_nRTD.npz | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_250ml-min_Analytik_MS_E_nRTD.npz | [] | npz | n/a | None..None | n/a |
+| learned_experimental_reference | MGA-E-05032025_300ml-min_Analytik_MS_E_nRTD.npz | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_300ml-min_Analytik_MS_E_nRTD.npz | [] | npz | n/a | None..None | n/a |
+| learned_experimental_reference | MGA-E-05032025_75ml-min_Analytik_MS_E_nRTD.npz | ChemRxnEngLab-nRTD-b7cdd47/Experiments/HSA_001/data/MGA-E-05032025_75ml-min_Analytik_MS_E_nRTD.npz | [] | npz | n/a | None..None | n/a |
