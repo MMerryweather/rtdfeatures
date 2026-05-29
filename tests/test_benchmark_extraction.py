@@ -9,14 +9,14 @@ from zipfile import ZipFile
 
 import numpy as np
 import pytest
-from scripts.extract_nrtd_benchmarks import (
+
+from rtdfeatures.benchmarks.extract_nrtd_benchmarks import (
     BENCHMARK_KERNEL_SUM_TOLERANCE,
     BENCHMARK_REGULAR_GRID_TOLERANCE,
     build_kernel_reference_frame,
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_PATH = REPO_ROOT / "scripts" / "extract_nrtd_benchmarks.py"
 ARCHIVE_PATH = REPO_ROOT / "test_data" / "nRTD-v1.0.0.zip"
 
 
@@ -112,7 +112,8 @@ def test_manifest_and_notice_include_required_citations(tmp_path: Path) -> None:
     subprocess.run(
         [
             sys.executable,
-            str(SCRIPT_PATH),
+            "-m",
+            "rtdfeatures.benchmarks.extract_nrtd_benchmarks",
             "--archive",
             str(archive_path),
             "--out-dir",
@@ -144,7 +145,8 @@ def test_integration_script_outputs_when_zip_present(tmp_path: Path) -> None:
     result = subprocess.run(
         [
             sys.executable,
-            str(SCRIPT_PATH),
+            "-m",
+            "rtdfeatures.benchmarks.extract_nrtd_benchmarks",
             "--archive",
             str(ARCHIVE_PATH),
             "--out-dir",
@@ -174,7 +176,8 @@ def test_integration_script_outputs_when_zip_present(tmp_path: Path) -> None:
     rerun = subprocess.run(
         [
             sys.executable,
-            str(SCRIPT_PATH),
+            "-m",
+            "rtdfeatures.benchmarks.extract_nrtd_benchmarks",
             "--archive",
             str(ARCHIVE_PATH),
             "--out-dir",

@@ -21,6 +21,7 @@ import rtdfeatures
 _SUBMODULE_ENTRIES = frozenset({
     "bootstrap",
     "baselines",
+    "benchmarks",
     "candidates",
     "diagnostics",
     "features",

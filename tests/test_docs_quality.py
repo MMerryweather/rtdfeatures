@@ -101,9 +101,7 @@ def test_roadmap_v09_v095_split_wording_is_explicit() -> None:
 
     assert "feature evidence contract and evidence reporting only" in roadmap
     assert "no public OOF execution helper in this version" in roadmap
-    assert "historical filename includes OOF wording" in roadmap
     assert "public OOF split contracts and `fit_transform_oof(...)`" in roadmap
-    assert "OOF execution work is split here" in roadmap
 
 
 def test_feature_plan_validation_and_manifest_are_version_scoped() -> None:

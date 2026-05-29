@@ -1,0 +1,52 @@
+{
+  "assumption_events": [],
+  "conversion_assumptions": {
+    "benchmark_kernel_sum_tolerance": 1e-09,
+    "benchmark_regular_grid_tolerance": 1e-09,
+    "direct_zip_reads": true,
+    "kernel_weights_normalized_in_derived_columns_only": true
+  },
+  "extraction_script": "rtdfeatures.benchmarks.extract_nrtd_benchmarks",
+  "generated_files": [
+    {
+      "case": "adler",
+      "kind": "kernel_reference",
+      "output_path": "test_data/benchmarks/nrtd/hsa_000_adler_kernel_reference.parquet",
+      "sha256": "acf1b92ec9a486bcdeaa461b64014a92b879ad35af1ef6243197da93067001ac",
+      "source_archive_paths": []
+    },
+    {
+      "case": "cholette",
+      "kind": "kernel_reference",
+      "output_path": "test_data/benchmarks/nrtd/hsa_000_cholette_kernel_reference.parquet",
+      "sha256": "94052f1fbaa3af45a2a1cc8bd00f5b8955b417e942067bf5a07299c25e48a7b6",
+      "source_archive_paths": []
+    },
+    {
+      "case": "dispersion",
+      "kind": "kernel_reference",
+      "output_path": "test_data/benchmarks/nrtd/hsa_000_dispersion_kernel_reference.parquet",
+      "sha256": "209d7252515655ce065c450bf692e198a2135e8ae89e1c80b3661a3eb1d37885",
+      "source_archive_paths": []
+    },
+    {
+      "case": "laminar_flow",
+      "kind": "kernel_reference",
+      "output_path": "test_data/benchmarks/nrtd/hsa_000_laminar_flow_kernel_reference.parquet",
+      "sha256": "8117d9405fab71122d73f2402d85a12406405bea32f7bad119c791a646c6ed4b",
+      "source_archive_paths": []
+    },
+    {
+      "case": "laminar_flow",
+      "kind": "signals",
+      "output_path": "test_data/benchmarks/nrtd/hsa_000_laminar_flow_signals.parquet",
+      "sha256": "0f9cfd6544fccf13b99ad22adbae35a8a7dab2c3c83632dc129b4eae6c2a93aa",
+      "source_archive_paths": []
+    }
+  ],
+  "license": "MIT",
+  "skipped_selected_source_files": [],
+  "source_archive": "ChemRxnEngLab/nRTD-v1.0.0.zip",
+  "zenodo_doi": "10.5281/zenodo.15609214",
+  "zenodo_record_url": "https://zenodo.org/records/15609214"
+}

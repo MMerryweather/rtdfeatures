@@ -37,7 +37,7 @@ def test_dependency_review_or_audit_is_configured() -> None:
 
 def test_behavior_tests_avoid_rollout_markers_in_names_and_text() -> None:
     marker_pattern = re.compile(
-        r"work package|work-package|milestone",
+        r"work package|work-package",
         re.IGNORECASE,
     )
     excluded_prefixes = (

@@ -14,8 +14,7 @@ _INTERNAL_DOC_DIRS = frozenset({
 
 # Paths excluded from the marker-language scan (in addition to whole directories
 # above).
-_MARKER_SCAN_EXCLUDE = frozenset({
-})
+_MARKER_SCAN_EXCLUDE: frozenset[str] = frozenset({})
 
 
 def _is_internal(path: Path) -> bool:

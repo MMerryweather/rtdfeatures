@@ -8,7 +8,6 @@ from pathlib import Path
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_PATH = REPO_ROOT / "scripts" / "inspect_nrtd_archive.py"
 ARCHIVE_PATH = REPO_ROOT / "test_data" / "nRTD-v1.0.0.zip"
 
 
@@ -29,7 +28,8 @@ def test_script_inspection_and_metadata(tmp_path: Path) -> None:
     subprocess.run(
         [
             sys.executable,
-            str(SCRIPT_PATH),
+            "-m",
+            "rtdfeatures.benchmarks.inspect_nrtd_archive",
             "--archive",
             str(ARCHIVE_PATH),
             "--metadata-out",
