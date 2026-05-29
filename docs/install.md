@@ -16,7 +16,7 @@ pip install rtdfeatures[benchmark]
 ## From source
 
 ```bash
-git clone https://github.com/<org-or-user>/rtdfeatures.git
+git clone https://github.com/MMerryweather/rtdfeatures.git
 cd rtdfeatures
 pip install -e .
 ```

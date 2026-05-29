@@ -45,11 +45,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/<org-or-user>/rtdfeatures"
-Repository = "https://github.com/<org-or-user>/rtdfeatures"
-Documentation = "https://github.com/<org-or-user>/rtdfeatures/tree/main/docs"
-"Changelog" = "https://github.com/<org-or-user>/rtdfeatures/releases"
-"Bug Tracker" = "https://github.com/<org-or-user>/rtdfeatures/issues"
+Homepage = "https://github.com/MMerryweather/rtdfeatures"
+Repository = "https://github.com/MMerryweather/rtdfeatures"
+Documentation = "https://github.com/MMerryweather/rtdfeatures/tree/main/docs"
+"Changelog" = "https://github.com/MMerryweather/rtdfeatures/releases"
+"Bug Tracker" = "https://github.com/MMerryweather/rtdfeatures/issues"
 
 [project.optional-dependencies]
 dev = [

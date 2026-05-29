@@ -11,10 +11,10 @@ def test_pyproject_release_metadata_contract() -> None:
     assert 'setuptools>=77.0.3' in pyproject_text
     assert 'license-files = ["LICENSE"]' in pyproject_text
     assert (
-        'Documentation = "https://github.com/<org-or-user>/rtdfeatures/tree/main/docs"'
+        'Documentation = "https://github.com/MMerryweather/rtdfeatures/tree/main/docs"'
         in pyproject_text
     )
-    assert '"Changelog" = "https://github.com/<org-or-user>/rtdfeatures/releases"' in pyproject_text
+    assert '"Changelog" = "https://github.com/MMerryweather/rtdfeatures/releases"' in pyproject_text
     assert "\ndocs = []\n" not in pyproject_text
 
 

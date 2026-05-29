@@ -1,6 +1,6 @@
 # rtdfeatures
 
-[![CI](https://github.com/<org-or-user>/rtdfeatures/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/<org-or-user>/rtdfeatures/actions/workflows/ci.yml)
+[![CI](https://github.com/MMerryweather/rtdfeatures/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/MMerryweather/rtdfeatures/actions/workflows/ci.yml)
 
 `rtdfeatures` learns constrained lag kernels from regular-grid process time series and turns them into auditable lag-aware features for downstream modelling.
 

@@ -5,5 +5,5 @@ type: software
 authors:
   - name: rtdfeatures maintainers
 license: MIT
-repository-code: "https://github.com/<org-or-user>/rtdfeatures"
+repository-code: "https://github.com/MMerryweather/rtdfeatures"
 version: 1.0.0
