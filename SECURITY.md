@@ -11,7 +11,7 @@
 
 Please do not open public issues for suspected vulnerabilities.
 
-- Private report email: security@merryweather.dev
+- Private report email: <security@merryweather.dev>
 - Include: affected version, reproduction steps, impact, and any known mitigations.
 
 ## Response Expectations

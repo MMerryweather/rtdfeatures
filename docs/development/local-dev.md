@@ -9,7 +9,7 @@
 ## Clone and install
 
 ```bash
-git clone https://github.com/<org-or-user>/rtdfeatures
+git clone https://github.com/MMerryweather/rtdfeatures
 cd rtdfeatures
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
