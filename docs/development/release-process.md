@@ -42,9 +42,10 @@ See [API stability policy](../api/stability.md) for the full tier definitions.
 ## Publishing workflow
 
 1. **Trigger** — Publishing a GitHub Release starts `.github/workflows/publish.yml`.
-2. **Build and integrity check** — The workflow builds wheel and sdist once and runs `twine check`.
-3. **Artifact validation** — The workflow installs the built wheel and sdist in separate clean virtual environments, validates import path/version from the installed distribution, and runs a minimal import smoke check from outside the checkout.
-4. **Trusted publish** — If both validation jobs pass, the workflow publishes the validated artifacts to PyPI using trusted publishing.
+2. **Release tag/version guard** — The `build` job verifies the GitHub Release tag `v<version>` matches `version` in `pyproject.toml` before running the build.
+3. **Build and integrity check** — The workflow builds wheel and sdist once and runs `twine check`.
+4. **Artifact validation** — The workflow installs the built wheel and sdist in separate clean virtual environments, validates import path/version from the installed distribution, and runs a minimal import smoke check from outside the checkout.
+5. **Environment-gated trusted publish** — If both validation jobs pass, the final `publish` job enters GitHub environment `pypi` for approval, then publishes the validated artifacts to PyPI using OIDC trusted publishing. No PyPI token/password secret is required in normal operation.
 
 ## Security Governance
 
@@ -62,13 +63,30 @@ Use these commands locally before creating a release:
 
 ```bash
 python -m pip install --upgrade pip
-pip install -e ".[dev]"
+pip install -e ".[dev,examples,sklearn]"
 pytest -m "not external_data" -v
 ruff check src/ tests/
 mypy src/ tests/
 python -m build
 twine check dist/*
 ```
+
+## First PyPI release checklist
+
+1. Confirm PyPI pending trusted publisher is configured:
+   - project: `rtdfeatures`
+   - owner: `MMerryweather`
+   - repository: `rtdfeatures`
+   - workflow: `publish.yml`
+   - environment: `pypi`
+2. Confirm GitHub environment `pypi` exists and has the intended reviewer policy.
+3. Confirm `pyproject.toml` version matches the intended release tag.
+4. Run the full local release gate.
+5. Merge release-prep PR to `main`.
+6. Create annotated tag `v<version>`.
+7. Publish a GitHub Release for that tag.
+8. Approve the `pypi` environment deployment.
+9. Verify install from PyPI in a clean virtual environment.
 
 ## Version history
 
