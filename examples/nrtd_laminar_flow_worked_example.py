@@ -16,12 +16,12 @@ import polars as pl
 
 from rtdfeatures import (
     ExponentialKernelLearner,
-    FixedDelayKernelLearner,
     GammaKernelLearner,
     KernelFeatureBuilder,
     SimplexKernelLearner,
 )
 from rtdfeatures.diagnostics.fit import KernelFitResult
+from rtdfeatures.learners import FixedDelayKernelLearner
 
 INPUT_PATH = Path("test_data/benchmarks/nrtd/hsa_000_laminar_flow_signals.parquet")
 OUTPUT_DIR = Path("docs/examples/generated")

@@ -21,18 +21,20 @@ from examples._support.plant_first_scenarios import (
 )
 
 from rtdfeatures import (
-    DelayedExponentialKernelLearner,
-    ErlangKernelLearner,
     ExponentialKernelLearner,
-    FixedDelayKernelLearner,
     GammaKernelLearner,
     KernelFeatureBuilder,
-    LogNormalKernelLearner,
     SimplexKernelLearner,
-    UniformKernelLearner,
 )
 from rtdfeatures.diagnostics import KernelFitResult
 from rtdfeatures.kernels.base import Kernel
+from rtdfeatures.learners import (
+    DelayedExponentialKernelLearner,
+    ErlangKernelLearner,
+    FixedDelayKernelLearner,
+    LogNormalKernelLearner,
+    UniformKernelLearner,
+)
 
 OUTPUT_DIR = Path("docs/examples/generated")
 OUTPUT_GALLERY = Path("docs/examples/plant_first_gallery.md")

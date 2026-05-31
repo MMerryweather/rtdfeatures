@@ -38,10 +38,12 @@ exponential, lognormal, and erlang):
 
 ```python
 from rtdfeatures import (
-    DelayedExponentialKernelLearner,
-    ErlangKernelLearner,
     ExponentialKernelLearner,
     GammaKernelLearner,
+)
+from rtdfeatures.learners import (
+    DelayedExponentialKernelLearner,
+    ErlangKernelLearner,
     LogNormalKernelLearner,
 )
 

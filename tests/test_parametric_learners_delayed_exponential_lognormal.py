@@ -6,7 +6,6 @@ import numpy as np
 import polars as pl
 import pytest
 
-import rtdfeatures
 from rtdfeatures.learners import DelayedExponentialKernelLearner, LogNormalKernelLearner
 from rtdfeatures.synthetic import (
     make_delayed_exponential_kernel_dataset,
@@ -166,11 +165,9 @@ def test_zero_only_lag_grid_behavior_is_explicit() -> None:
         )
 
 
-def test_public_exports_include_new_learners() -> None:
-    assert "DelayedExponentialKernelLearner" in rtdfeatures.__all__
-    assert "LogNormalKernelLearner" in rtdfeatures.__all__
-    assert rtdfeatures.DelayedExponentialKernelLearner is DelayedExponentialKernelLearner
-    assert rtdfeatures.LogNormalKernelLearner is LogNormalKernelLearner
+def test_new_learners_are_available_from_learners_submodule() -> None:
+    assert DelayedExponentialKernelLearner is not None
+    assert LogNormalKernelLearner is not None
 
 
 def test_delayed_exponential_out_of_window_init_delay_is_handled_safely() -> None:

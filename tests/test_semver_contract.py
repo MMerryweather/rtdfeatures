@@ -14,27 +14,21 @@ from pathlib import Path
 
 import polars as pl
 
+import rtdfeatures
 from rtdfeatures import (
     DelayedExponentialKernel,
-    DelayedExponentialKernelLearner,
-    ErlangKernel,
-    ErlangKernelLearner,
     ExponentialKernel,
     ExponentialKernelLearner,
     FeatureRegistry,
     FeatureSpec,
     FixedDelayKernel,
-    FixedDelayKernelLearner,
     GammaKernel,
     GammaKernelLearner,
     Kernel,
     KernelFeatureBuilder,
-    LogNormalKernel,
-    LogNormalKernelLearner,
     SimplexKernelLearner,
     TransformResult,
     UniformKernel,
-    UniformKernelLearner,
 )
 from rtdfeatures.diagnostics import (
     BaselineComparison,
@@ -46,6 +40,14 @@ from rtdfeatures.diagnostics import (
     KernelFitResult,
     KernelShapeSummary,
     TransformReport,
+)
+from rtdfeatures.kernels import ErlangKernel, LogNormalKernel
+from rtdfeatures.learners import (
+    DelayedExponentialKernelLearner,
+    ErlangKernelLearner,
+    FixedDelayKernelLearner,
+    LogNormalKernelLearner,
+    UniformKernelLearner,
 )
 
 # -
@@ -134,32 +136,6 @@ class TestConstructorSignatures:
             },
         )
 
-    def test_erlang_kernel(self) -> None:
-        _assert_params(
-            ErlangKernel,
-            expected={
-                "shape_k",
-                "rate_beta",
-                "max_lag_steps",
-                "dt",
-                "min_lag_steps",
-                "name",
-            },
-        )
-
-    def test_lognormal_kernel(self) -> None:
-        _assert_params(
-            LogNormalKernel,
-            expected={
-                "log_mu",
-                "log_sigma",
-                "max_lag_steps",
-                "dt",
-                "min_lag_steps",
-                "name",
-            },
-        )
-
     def test_simplex_kernel_learner(self) -> None:
         _assert_params(
             SimplexKernelLearner,
@@ -214,96 +190,6 @@ class TestConstructorSignatures:
             },
         )
 
-    def test_delayed_exponential_kernel_learner(self) -> None:
-        _assert_params(
-            DelayedExponentialKernelLearner,
-            expected={
-                "max_lag",
-                "min_lag",
-                "dt",
-                "loss",
-                "smoothness_penalty",
-                "seed",
-                "validation_fraction",
-                "learning_rate",
-                "max_epochs",
-                "huber_delta",
-                "init_delay",
-                "init_rate_lambda",
-            },
-        )
-
-    def test_lognormal_kernel_learner(self) -> None:
-        _assert_params(
-            LogNormalKernelLearner,
-            expected={
-                "max_lag",
-                "min_lag",
-                "dt",
-                "loss",
-                "smoothness_penalty",
-                "seed",
-                "validation_fraction",
-                "learning_rate",
-                "max_epochs",
-                "huber_delta",
-                "init_log_mu",
-                "init_log_sigma",
-            },
-        )
-
-    def test_erlang_kernel_learner(self) -> None:
-        _assert_params(
-            ErlangKernelLearner,
-            expected={
-                "max_lag",
-                "min_lag",
-                "dt",
-                "loss",
-                "smoothness_penalty",
-                "seed",
-                "validation_fraction",
-                "learning_rate",
-                "max_epochs",
-                "huber_delta",
-                "shape_k_candidates",
-                "init_rate_beta",
-            },
-        )
-
-    def test_fixed_delay_kernel_learner(self) -> None:
-        _assert_params(
-            FixedDelayKernelLearner,
-            expected={
-                "max_lag",
-                "min_lag",
-                "dt",
-                "loss",
-                "smoothness_penalty",
-                "seed",
-                "validation_fraction",
-                "learning_rate",
-                "max_epochs",
-                "huber_delta",
-            },
-        )
-
-    def test_uniform_kernel_learner(self) -> None:
-        _assert_params(
-            UniformKernelLearner,
-            expected={
-                "max_lag",
-                "min_lag",
-                "dt",
-                "loss",
-                "smoothness_penalty",
-                "seed",
-                "validation_fraction",
-                "learning_rate",
-                "max_epochs",
-                "huber_delta",
-            },
-        )
 
     def test_kernel_feature_builder(self) -> None:
         _assert_params(
@@ -692,3 +578,45 @@ def test_no_false_deprecation_text_in_docs() -> None:
         f"Found deprecation text in user-facing docs ({len(hits)} hits):\n"
         + "\n".join(hits)
     )
+
+
+def test_root_all_matches_stable_v1_snapshot() -> None:
+    assert list(rtdfeatures.__all__) == [
+        "Kernel",
+        "FixedDelayKernel",
+        "UniformKernel",
+        "GammaKernel",
+        "ExponentialKernel",
+        "DelayedExponentialKernel",
+        "SimplexKernelLearner",
+        "GammaKernelLearner",
+        "ExponentialKernelLearner",
+        "KernelFeatureBuilder",
+        "FeatureRegistry",
+        "FeatureSpec",
+        "TransformResult",
+    ]
+
+
+def test_non_root_v1_objects_are_not_root_exported() -> None:
+    non_root_names = {
+        "ErlangKernel",
+        "LogNormalKernel",
+        "FixedDelayKernelLearner",
+        "UniformKernelLearner",
+        "DelayedExponentialKernelLearner",
+        "ErlangKernelLearner",
+        "LogNormalKernelLearner",
+    }
+
+    assert non_root_names.isdisjoint(set(rtdfeatures.__all__))
+
+
+def test_non_root_v1_objects_remain_available_from_submodules() -> None:
+    assert ErlangKernel is not None
+    assert LogNormalKernel is not None
+    assert DelayedExponentialKernelLearner is not None
+    assert ErlangKernelLearner is not None
+    assert FixedDelayKernelLearner is not None
+    assert LogNormalKernelLearner is not None
+    assert UniformKernelLearner is not None

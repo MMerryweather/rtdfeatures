@@ -29,7 +29,7 @@ fit = learner.fit(df, input_col="in", target_col="out", time_col="t", order_by_t
 Deterministic fixed-delay learner (single active lag).
 
 ```python
-from rtdfeatures import FixedDelayKernelLearner
+from rtdfeatures.learners import FixedDelayKernelLearner
 
 fixed = FixedDelayKernelLearner(max_lag="20m", min_lag=0)
 fit = fixed.fit(df, input_col="in", target_col="out", time_col="t", order_by_time=False)
@@ -42,7 +42,7 @@ fit = fixed.fit(df, input_col="in", target_col="out", time_col="t", order_by_tim
 Deterministic uniform-window learner (equal mass across the active lag window).
 
 ```python
-from rtdfeatures import UniformKernelLearner
+from rtdfeatures.learners import UniformKernelLearner
 
 uniform = UniformKernelLearner(max_lag="20m", min_lag=0)
 fit = uniform.fit(df, input_col="in", target_col="out", time_col="t", order_by_time=False)
@@ -101,7 +101,7 @@ fit = exp.fit(df, input_col="in", target_col="out", time_col="t")
 Parametric delayed-exponential kernel learner.
 
 ```python
-from rtdfeatures import DelayedExponentialKernelLearner
+from rtdfeatures.learners import DelayedExponentialKernelLearner
 
 delayed_exp = DelayedExponentialKernelLearner(
     max_lag="6h", min_lag="10m", loss="huber", init_delay=None, init_rate_lambda=None
@@ -116,7 +116,7 @@ fit = delayed_exp.fit(df, input_col="in", target_col="out", time_col="t")
 Parametric lognormal kernel learner.
 
 ```python
-from rtdfeatures import LogNormalKernelLearner
+from rtdfeatures.learners import LogNormalKernelLearner
 
 lognormal = LogNormalKernelLearner(
     max_lag="6h", min_lag="10m", loss="huber", init_log_mu=None, init_log_sigma=0.5
@@ -131,7 +131,7 @@ fit = lognormal.fit(df, input_col="in", target_col="out", time_col="t")
 Parametric Erlang kernel learner.
 
 ```python
-from rtdfeatures import ErlangKernelLearner
+from rtdfeatures.learners import ErlangKernelLearner
 
 erlang = ErlangKernelLearner(
     max_lag="6h", min_lag="10m", loss="huber", shape_k_candidates=None, init_rate_beta=None

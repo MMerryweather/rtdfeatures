@@ -60,7 +60,8 @@ kernel = UniformKernel(min_lag_steps=0, max_lag_steps=10, dt=60.0)
 ## Parametric kernels
 
 ```python
-from rtdfeatures import GammaKernel, ExponentialKernel, DelayedExponentialKernel, ErlangKernel, LogNormalKernel
+from rtdfeatures import GammaKernel, ExponentialKernel, DelayedExponentialKernel
+from rtdfeatures.kernels import ErlangKernel, LogNormalKernel
 ```
 
 These convert family parameters onto a discrete lag grid. They do not perform fitting — use the corresponding learner for that.

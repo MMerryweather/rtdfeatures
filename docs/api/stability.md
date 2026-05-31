@@ -39,25 +39,23 @@ Removals or renames in the stable API require a **major version bump**. Additive
 
 **Stable root imports:**
 
-```python
-from rtdfeatures import (
-    Kernel,
-    FixedDelayKernel,
-    UniformKernel,
-    GammaKernel,
-    ExponentialKernel,
-    DelayedExponentialKernel,
-    ErlangKernel,
-    LogNormalKernel,
-    SimplexKernelLearner,
-    GammaKernelLearner,
-    ExponentialKernelLearner,
-    KernelFeatureBuilder,
-    FeatureRegistry,
-    FeatureSpec,
-    TransformResult,
-)
-```
+- `Kernel`
+- `FixedDelayKernel`
+- `UniformKernel`
+- `GammaKernel`
+- `ExponentialKernel`
+- `DelayedExponentialKernel`
+- `SimplexKernelLearner`
+- `GammaKernelLearner`
+- `ExponentialKernelLearner`
+- `KernelFeatureBuilder`
+- `FeatureRegistry`
+- `FeatureSpec`
+- `TransformResult`
+
+The stable root import list is intentionally smaller than the full package
+surface. More specialised kernels and learners remain available from their
+submodules but are not part of the root-level V1 stability promise.
 
 ## Provisional V1 API
 
