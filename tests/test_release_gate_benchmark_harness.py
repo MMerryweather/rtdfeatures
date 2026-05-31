@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -63,3 +64,26 @@ def test_required_tracked_fixture_files_exist_and_manifest_outputs_are_present()
         )
         absolute = REPO_ROOT / output_path
         assert absolute.exists(), f"manifest output_path missing from repository: {absolute}"
+
+
+def test_manifest_generated_files_sha256_match_tracked_fixture_contents() -> None:
+    manifest = json.loads((BENCHMARK_DIR / "manifest.json").read_text(encoding="utf-8"))
+    generated_files = manifest.get("generated_files", [])
+    assert generated_files, "manifest.generated_files must not be empty"
+
+    for entry in generated_files:
+        output_path = entry.get("output_path")
+        expected_sha256 = entry.get("sha256")
+
+        assert isinstance(output_path, str) and output_path, (
+            "manifest generated_files.output_path missing"
+        )
+        assert isinstance(expected_sha256, str) and expected_sha256, (
+            "manifest generated_files.sha256 missing"
+        )
+
+        absolute = REPO_ROOT / output_path
+        assert absolute.exists(), f"manifest output_path missing from repository: {absolute}"
+
+        digest = hashlib.sha256(absolute.read_bytes()).hexdigest()
+        assert digest == expected_sha256, f"sha256 mismatch for {output_path}"
