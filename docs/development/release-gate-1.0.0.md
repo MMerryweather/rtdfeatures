@@ -6,11 +6,11 @@ TBD until merge
 
 ## Date
 
-Sun May 31 17:21:11 ChST 2026
+Sun May 31 18:01:19 ChST 2026
 
 ## Environment
 
-- Python 3.13.5
+- Python 3.12.3
 - rtdfeatures 1.0.0
 - Install mode: editable install with dev/examples/sklearn extras
 
@@ -32,6 +32,17 @@ Sun May 31 17:21:11 ChST 2026
 | `pytest tests/test_public_api_docs_contract.py -v` | PASS — 3 passed |
 | `pytest tests/test_sklearn_adapter.py -v` | PASS — 26 passed |
 | `python examples/08_sklearn_adapter.py` | PASS |
+
+## Publish Workflow Readiness
+
+- `publish.yml` triggers on GitHub Release publication.
+- Build job validates release tag matches `pyproject.toml` version.
+- Wheel and sdist are built once and uploaded as workflow artefacts.
+- Wheel install is validated in a clean virtual environment.
+- Sdist install is validated in a clean virtual environment.
+- Final publish job uses GitHub environment `pypi`.
+- Final publish job uses PyPI trusted publishing via OIDC with `id-token: write`.
+- No PyPI API token or password secret is required.
 
 ## Root API
 
