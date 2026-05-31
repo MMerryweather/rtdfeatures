@@ -45,8 +45,6 @@ The following names are exported from `rtdfeatures.__init__` and form the stable
 - `GammaKernel`
 - `ExponentialKernel`
 - `DelayedExponentialKernel`
-- `ErlangKernel`
-- `LogNormalKernel`
 - `SimplexKernelLearner`
 - `GammaKernelLearner`
 - `ExponentialKernelLearner`
@@ -54,6 +52,10 @@ The following names are exported from `rtdfeatures.__init__` and form the stable
 - `FeatureRegistry`
 - `FeatureSpec`
 - `TransformResult`
+
+Specialised kernels and learners that are not root-exported remain available from
+`rtdfeatures.kernels` and `rtdfeatures.learners`. They are usable, but the
+root-level V1 stability promise applies only to the stable public API list above.
 
 ## Advanced and provisional APIs
 

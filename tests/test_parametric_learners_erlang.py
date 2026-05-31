@@ -8,7 +8,6 @@ import numpy as np
 import polars as pl
 import pytest
 
-import rtdfeatures
 from rtdfeatures.learners import ErlangKernelLearner
 from rtdfeatures.synthetic import make_erlang_kernel_dataset
 
@@ -149,9 +148,8 @@ def test_erlang_fit_is_deterministic_across_candidate_ordering_given_seed(
     assert fit_reversed.fit_provenance["parametric_parameters"]["shape_k"] == 3
 
 
-def test_public_exports_include_erlang_learner() -> None:
-    assert "ErlangKernelLearner" in rtdfeatures.__all__
-    assert rtdfeatures.ErlangKernelLearner is ErlangKernelLearner
+def test_erlang_learner_is_available_from_learners_submodule() -> None:
+    assert ErlangKernelLearner is not None
 
 
 def test_zero_only_lag_grid_behavior_is_explicit_for_erlang() -> None:

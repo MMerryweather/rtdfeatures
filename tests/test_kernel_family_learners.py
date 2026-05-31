@@ -8,7 +8,6 @@ import numpy as np
 import polars as pl
 import pytest
 
-import rtdfeatures
 from rtdfeatures.learners import FixedDelayKernelLearner, UniformKernelLearner
 from rtdfeatures.synthetic import make_diffuse_kernel_dataset, make_single_delay_dataset
 
@@ -132,11 +131,9 @@ def test_fixed_and_uniform_unsorted_handling_uses_shared_preparation_path() -> N
         assert fit.kernel.max_lag_steps == 7
 
 
-def test_fixed_and_uniform_root_exports_are_available() -> None:
-    assert "FixedDelayKernelLearner" in rtdfeatures.__all__
-    assert "UniformKernelLearner" in rtdfeatures.__all__
-    assert rtdfeatures.FixedDelayKernelLearner is FixedDelayKernelLearner
-    assert rtdfeatures.UniformKernelLearner is UniformKernelLearner
+def test_fixed_and_uniform_learners_are_available_from_learners_submodule() -> None:
+    assert FixedDelayKernelLearner is not None
+    assert UniformKernelLearner is not None
 
 
 def test_fixed_and_uniform_constructor_validation_is_strict() -> None:
