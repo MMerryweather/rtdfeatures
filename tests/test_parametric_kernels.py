@@ -429,10 +429,14 @@ def test_all_v1_parametric_kernels_are_root_exported() -> None:
         "GammaKernel",
         "ExponentialKernel",
         "DelayedExponentialKernel",
+    }
+    assert required.issubset(set(rtdfeatures.__all__))
+
+    specialist_non_root = {
         "LogNormalKernel",
         "ErlangKernel",
     }
-    assert required.issubset(set(rtdfeatures.__all__))
+    assert specialist_non_root.isdisjoint(set(rtdfeatures.__all__))
 
 
 def test_make_parametric_learned_kernel_supports_all_v1_families() -> None:

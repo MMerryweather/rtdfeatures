@@ -2,78 +2,64 @@
 
 ## Commit
 
-918fe6b5aa4ac8ff012d153033822e033af1a606
+TBD until merge
 
 ## Date
 
-Sat May 16 10:00:00 UTC 2026
+Sun May 31 17:21:11 ChST 2026
 
 ## Environment
 
 - Python 3.13.5
-- rtdfeatures 1.0.0 (editable install)
+- rtdfeatures 1.0.0
+- Install mode: editable install with dev/examples/sklearn extras
 
 ## Commands Run
 
-### Phase 12.1 — Clean local gate
+| Command | Result |
+|---|---|
+| `ruff check .` | PASS |
+| `mypy src tests` | PASS |
+| `pytest -m "not external_data" -v` | PASS — 823 passed, 3 deselected, 2 xfailed |
+| `python -m build` | PASS |
+| `twine check dist/*` | PASS |
+
+## Targeted checks
 
 | Command | Result |
-|---------|--------|
-| `ruff check .` | PASS (1 fixable I001 error auto-fixed with `--fix`, clean after) |
-| `mypy src tests --ignore-missing-imports` | FAIL — 14 errors in 4 files (see note below) |
-| `pytest -m "not external_data" -x --tb=short` | PASS — 526 passed, 3 deselected, 2 xfailed |
+|---|---|
+| `pytest tests/test_semver_contract.py -v` | PASS — 33 passed |
+| `pytest tests/test_public_api_docs_contract.py -v` | PASS — 3 passed |
+| `pytest tests/test_sklearn_adapter.py -v` | PASS — 26 passed |
+| `python examples/08_sklearn_adapter.py` | PASS |
 
-Note: mypy reported 14 errors in `tests/test_release_metadata.py`, `tests/test_learner_base_contract_v1.py`, `tests/test_semver_contract.py`, and `src/rtdfeatures/integrations/sklearn.py`. These are pre-existing type annotation issues and not release-blocking for v1.0. mypy is not fully configured in the project yet.
+## Root API
 
-### Phase 12.2 — sklearn gate
+Stable V1 root exports:
 
-| Command | Result |
-|---------|--------|
-| `pytest tests/test_sklearn_adapter.py -v` | PASS — 21 passed |
-| `python examples/08_sklearn_adapter.py` | PASS — completed successfully |
+- `Kernel`
+- `FixedDelayKernel`
+- `UniformKernel`
+- `GammaKernel`
+- `ExponentialKernel`
+- `DelayedExponentialKernel`
+- `SimplexKernelLearner`
+- `GammaKernelLearner`
+- `ExponentialKernelLearner`
+- `KernelFeatureBuilder`
+- `FeatureRegistry`
+- `FeatureSpec`
+- `TransformResult`
 
-### Phase 12.3 — Example gate
+## Result
 
-| Example | Result |
-|---------|--------|
-| `01_quickstart_simplex.py` | PASS |
-| `02_parametric_vs_empirical.py` | PASS |
-| `03_categorical_genealogy.py` | PASS |
-| `04_multimodal_kernel.py` | PASS |
-| `05_weak_identifiability.py` | PASS |
-| `06_oof_feature_generation.py` | PASS |
-| `07_bypass_recycle.py` | PASS |
-| `08_sklearn_adapter.py` | PASS |
-
-## Results
-
-- ruff: PASS
-- mypy: FAIL (14 pre-existing errors, not release-blocking)
-- pytest: 526 passed
-- sklearn tests: 21 passed
-- examples 01-08: all PASS
+Release gate passed. No failed checks are waived.
 
 ## Deferred Items
 
-- Learner fit-pipeline simplification deferred to V1.1
+- Learner fit-pipeline simplification remains deferred to V1.1.
+- Specialised kernels and learners remain available from submodules but are not root-stable V1 exports.
 
 ## TestPyPI Validation
 
-Deferred to maintainer. User will handle TestPyPI publish, install verification, and git tag v1.0.0 manually.
-
-## Completed Work Packages
-
-1. Phase 00 — Preflight ✅
-2. Phase 01 — sklearn skeleton ✅
-3. Phase 02 — sklearn transformer ✅
-4. Phase 03 — sklearn tests ✅
-5. Phase 04 — sklearn docs/CI ✅
-6. Phase 05 — parametric root exports ✅ (already complete from earlier PR)
-7. Phase 06 — API stability policy ✅
-8. Phase 07 — docs hygiene ✅
-9. Phase 08 — examples gallery ✅
-10. Phase 09 — release notes ✅
-11. Phase 10 — V1.1 deferral plan ✅
-12. Phase 11 — final metadata ✅
-13. Phase 12 — release gate ✅
-14. Phase 13 — TestPyPI/tag (deferred to maintainer)
+Not part of the automated release gate. Release artefacts are validated through clean wheel and sdist install checks before trusted publishing.

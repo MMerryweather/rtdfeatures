@@ -38,25 +38,18 @@ _SUBMODULE_ENTRIES = frozenset({
 # in dir(rtdfeatures). If you add a new stable export, update this set.
 EXPECTED_STABLE_NAMES = frozenset({
     "DelayedExponentialKernel",
-    "DelayedExponentialKernelLearner",
-    "ErlangKernel",
-    "ErlangKernelLearner",
     "ExponentialKernel",
     "ExponentialKernelLearner",
     "FeatureRegistry",
     "FeatureSpec",
     "FixedDelayKernel",
-    "FixedDelayKernelLearner",
     "GammaKernel",
     "GammaKernelLearner",
     "Kernel",
     "KernelFeatureBuilder",
-    "LogNormalKernel",
-    "LogNormalKernelLearner",
     "SimplexKernelLearner",
     "TransformResult",
     "UniformKernel",
-    "UniformKernelLearner",
 })
 
 
