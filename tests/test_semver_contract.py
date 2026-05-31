@@ -16,25 +16,18 @@ import polars as pl
 
 from rtdfeatures import (
     DelayedExponentialKernel,
-    DelayedExponentialKernelLearner,
-    ErlangKernel,
-    ErlangKernelLearner,
     ExponentialKernel,
     ExponentialKernelLearner,
     FeatureRegistry,
     FeatureSpec,
     FixedDelayKernel,
-    FixedDelayKernelLearner,
     GammaKernel,
     GammaKernelLearner,
     Kernel,
     KernelFeatureBuilder,
-    LogNormalKernel,
-    LogNormalKernelLearner,
     SimplexKernelLearner,
     TransformResult,
     UniformKernel,
-    UniformKernelLearner,
 )
 from rtdfeatures.diagnostics import (
     BaselineComparison,
@@ -46,6 +39,14 @@ from rtdfeatures.diagnostics import (
     KernelFitResult,
     KernelShapeSummary,
     TransformReport,
+)
+from rtdfeatures.kernels import ErlangKernel, LogNormalKernel
+from rtdfeatures.learners import (
+    DelayedExponentialKernelLearner,
+    ErlangKernelLearner,
+    FixedDelayKernelLearner,
+    LogNormalKernelLearner,
+    UniformKernelLearner,
 )
 
 # -

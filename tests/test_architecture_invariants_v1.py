@@ -12,12 +12,11 @@ import rtdfeatures
 from rtdfeatures import (
     FeatureRegistry,
     FixedDelayKernel,
-    FixedDelayKernelLearner,
     Kernel,
     KernelFeatureBuilder,
     TransformResult,
-    UniformKernelLearner,
 )
+from rtdfeatures.learners import FixedDelayKernelLearner, UniformKernelLearner
 
 _RUNTIME_SOURCE_FILES = tuple(sorted(Path("src").rglob("*.py")))
 

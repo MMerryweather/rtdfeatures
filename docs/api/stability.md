@@ -47,8 +47,6 @@ from rtdfeatures import (
     GammaKernel,
     ExponentialKernel,
     DelayedExponentialKernel,
-    ErlangKernel,
-    LogNormalKernel,
     SimplexKernelLearner,
     GammaKernelLearner,
     ExponentialKernelLearner,
@@ -57,6 +55,7 @@ from rtdfeatures import (
     FeatureSpec,
     TransformResult,
 )
+from rtdfeatures.kernels import ErlangKernel, LogNormalKernel
 ```
 
 ## Provisional V1 API
