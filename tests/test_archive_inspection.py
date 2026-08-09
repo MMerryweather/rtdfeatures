@@ -14,7 +14,7 @@ ARCHIVE_PATH = REPO_ROOT / "test_data" / "nRTD-v1.0.0.zip"
 def test_import_smoke() -> None:
     import numpy  # noqa: F401
     import polars  # noqa: F401
-    import pyarrow  # noqa: F401  # type: ignore[import-untyped]
+    import pyarrow  # type: ignore[import-untyped]  # noqa: F401
 
 
 @pytest.mark.external_data
