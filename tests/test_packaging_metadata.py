@@ -8,7 +8,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 def test_pyproject_release_metadata_contract() -> None:
     pyproject_text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
 
-    assert 'setuptools>=77.0.3' in pyproject_text
+    assert 'setuptools>=83.0.0' in pyproject_text
     assert 'license-files = ["LICENSE"]' in pyproject_text
     assert (
         'Documentation = "https://github.com/MMerryweather/rtdfeatures/tree/main/docs"'
