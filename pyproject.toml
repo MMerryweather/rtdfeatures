@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rtdfeatures"
-version = "1.0.0"
+version = "1.0.1"
 description = "Learn constrained causal kernels and generate Polars feature tables plus diagnostics."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.1
+- Updated dependencies (setup-python@v7 from 6 to 7, upload-artifact from 4 to 6)
+
 ## 1.0.0
 
 ### Added
